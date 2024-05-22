@@ -25,10 +25,11 @@ class _ApiDataState extends State<ApiData> {
           final user = users[index];
           final name = user['name']['first'];
           final email = user['email'];
+          final imageUrl = user['picture']['thumbnail'];
         return ListTile(
           leading: CircleAvatar(
-            backgroundColor: Colors.black,
-            child: Text('${index+1}',style: TextStyle(color: Colors.green,fontWeight: FontWeight.bold),)),
+            child: Image.network(imageUrl),
+           ),
           title: Text(name),
           subtitle: Text(email),
         );
